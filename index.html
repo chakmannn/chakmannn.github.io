@@ -2,32 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ProTowWrecker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProTowWrecker.com - Domain For Sale</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background: url('https://www.trucking.org/sites/default/files/2025-01/Truck%20Being%20Towed.jpg') no-repeat center center fixed;
+    /* Reset some defaults */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE5NZlGJybWVD-ZQ5tOGSFhDOAo6d8N8t21w&s') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding-top: 100px;
+    }
+    /* Dark overlay for contrast */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 40px 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
     }
     h1 {
-      font-size: 48px;
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
     }
     p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: auto;
+      font-size: 1.1rem;
+      margin: 12px 0;
+      line-height: 1.5;
+      color: #ddd;
+    }
+    strong {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 15px;
+    }
+    /* Subtle hover effect on links if added */
+    a {
+      color: #4FC3F7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #81D4FA;
+      text-decoration: underline;
+    }
+    /* Responsive font scaling */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Hi there, ProTowWrecker.com is up for sale!</h1>
-  <p><strong>To proceed:</strong></p>
-  <p>1 — Head to GoDaddy’s official site and sign up for an account if you don’t already have one.</p>
-  <p>2 — Use the search bar on the platform to find the domain.</p>
-  <p>3 — Add it to your cart and proceed with payment like you would for any other product.</p>
+  <div class="overlay">
+    <h1>Hi there, ProTowWrecker.com is up for sale!</h1>
+    <p><strong>To proceed:</strong></p>
+    <p>1 — Head to GoDaddy’s official site and sign up for an account if you don’t already have one.</p>
+    <p>2 — Use the search bar on the platform to find the domain.</p>
+    <p>3 — Add it to your cart and proceed with payment like you would for any other product.</p>
+  </div>
 </body>
 </html>
