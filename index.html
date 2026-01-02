@@ -1,9 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>OK</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Project</title>
+  <style>
+    /* ===== Global Styles ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #1f2937;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    /* ===== Popup Styles ===== */
+    .popup {
+      display: none; /* hidden by default */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      z-index: 1000;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    .popup p {
+      color: #334155;
+      margin: 15px 0;
+    }
+
+    .popup .close {
+      background-color: #ef4444;
+      margin-top: 15px;
+    }
+
+    .popup .close:hover {
+      background-color: #b91c1c;
+    }
+
+    /* ===== Overlay ===== */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
-  <h1>Site is clean</h1>
+
+  <h1>Popup Project</h1>
+
+  <button onclick="openPopup('testValidation')">Test Validation Popup</button>
+  <button onclick="openPopup('scaling')">Scaling Popup</button>
+  <button onclick="openPopup('stockAlert')">Stock Alert Popup</button>
+  <button onclick="openPopup('killDecision')">Kill Decision Popup</button>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== Popups ===== -->
+  <div class="popup" id="testValidation">
+    <h2>Test Validation Popup</h2>
+    <p>Use this popup to validate product tests before launch.</p>
+    <button class="close" onclick="closePopup('testValidation')">Close</button>
+  </div>
+
+  <div class="popup" id="scaling">
+    <h2>Scaling Popup</h2>
+    <p>Notify about scaling actions for the product or campaign.</p>
+    <button class="close" onclick="closePopup('scaling')">Close</button>
+  </div>
+
+  <div class="popup" id="stockAlert">
+    <h2>Stock Alert Popup</h2>
+    <p>Alert users or team about stock levels in real-time.</p>
+    <button class="close" onclick="closePopup('stockAlert')">Close</button>
+  </div>
+
+  <div class="popup" id="killDecision">
+    <h2>Kill Decision Popup</h2>
+    <p>Indicate when a product or test should be stopped.</p>
+    <button class="close" onclick="closePopup('killDecision')">Close</button>
+  </div>
+
+  <script>
+    function openPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closePopup(id) {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // close popup when clicking outside
+    document.getElementById('overlay').addEventListener('click', () => {
+      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+      document.getElementById('overlay').style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
+
